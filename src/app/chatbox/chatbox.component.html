@@ -1,0 +1,42 @@
+<div class='desktop-only'
+    style="height: 560px; width: 300px; background-color: rgb(243, 241, 233); margin: 20px;border:1px solid rgb(128, 88, 3);border-radius: 25px;display: flex;flex-direction: column;justify-content: flex-end;">
+    <!-- <div class="title"
+      style=" width: 300px; height: 50px;border: 1px solid rgb(206, 203, 203); border-radius: 25px;vertical-align: middle;"
+      contenteditable="true" data-placeholder="Type a message..">
+       <p>type a message</p>
+  </div> -->
+    <div id='chatBox' #chatBox class="scrolling-wrapper-flexbox"
+        style="height: 500px;width:290px; margin:5px 5px 2px 5px;border-radius: 25px 25px 0 0;">
+        <div
+            style="height:fit-content;width: 290px;padding: 5px 10px;display: flex; flex-direction: column;justify-content:flex-end;">
+            <div *ngFor="let msg of msgs;">
+                <div [class.sentmsg]="msg.type == 's'" [class.receivedmsg]="msg.type == 'r'">{{msg.msg}}</div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 50px;display: flex;margin: 2px;">
+        <input id='input' type="text" autocomplete="off" placeholder="Type a message..." autofocus [value]=""
+            (keyup)="submit($event)"
+            style="height:50px; width: 250px;outline: none;border: 1px solid rgb(206, 203, 203);border-radius: 25px; padding: 10px;">
+        <!-- <textarea placeholder="Type a message..." rows="1" cols="40"
+            style="height:50px; width: 250px;outline: none;border: 1px solid rgb(206, 203, 203);border-radius: 25px; padding: 12px; resize: none;"></textarea> -->
+        <div class="material-icons" style="font-size: 36px;margin: 0 5px;padding:7px 0;cursor: pointer;"
+            (click)="sendMsg()">
+            send
+        </div>
+    </div>
+</div>
+<div style="height: 50px;display: flex;margin: 2px;">
+    <input id='recv_input' type="text" autocomplete="off" placeholder="Type a message..." autofocus [value]=""
+        (keyup)="submit($event)"
+        style="height:50px; width: 250px;outline: none;border: 1px solid rgb(206, 203, 203);border-radius: 25px; padding: 10px;">
+    <!-- <textarea placeholder="Type a message..." rows="1" cols="40"
+        style="height:50px; width: 250px;outline: none;border: 1px solid rgb(206, 203, 203);border-radius: 25px; padding: 12px; resize: none;"></textarea> -->
+    <div class="material-icons" style="font-size: 36px;margin: 0 5px;padding:7px 0;cursor: pointer;"
+        (click)="recvMsg()">
+        send
+    </div>
+</div>
+<div class="mobile-view" style="height: 100px;width: 100px;border-radius: 50%;background-color: thistle;padding:20px;">
+    <i class="far fa-comment-dots" style="font-size: 60px;"></i>
+</div>

@@ -1,0 +1,65 @@
+p-panel >>> .ui-panel {
+    margin-top: 1em;
+    width: 98%;
+    min-height: 300px;
+  }
+.picked{
+    background-color:rgb(21, 245, 32);
+    background-color:rgb(245, 48, 14);
+    border:2px solid rgb(84, 166, 243);
+    /*text-align: center;*/
+}
+.dropped{
+    border:2px solid rgb(240, 243, 242); 
+}
+/* .ui-g-1 :active{
+    border:2px solid springgreen;
+} */
+.ui-g-1 {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 60px;
+    width: 60px;
+    padding: 0%;
+    align-content: center;
+    background-color: rgb(245, 235, 181);
+}
+.ui-g-2{
+    width: 100px;
+    height: 50px;
+    border:1px solid steelblue;
+}
+.ui-md-12{
+    width:602px;
+    height: 60px;
+    position: relative;
+    padding: 0%;
+}
+.black{
+    background-color: rgb(108, 109, 110);
+}
+.white{
+    background-color: rgb(243, 240, 204);
+}
+mat-grid-tile {
+    background: lightblue;
+  }
+.enabled{
+    background-color:rgb(117, 119, 121);
+    color: black;
+}
+.disabled{
+    opacity: 0.7;
+    background-color:rgb(158, 160, 161);
+    /* background-color:rgb(207, 210, 212); */
+    color: rgb(62, 63, 65);
+}
+.title:empty:not(:focus):before {
+    content: attr(data-placeholder)
+  }
+.board{
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}  

@@ -1,0 +1,56 @@
+<div id='timer' class="desktop-only" style="height: 580px; display: flex;flex-direction: column;margin-right: 5px;;">
+    <div style="height: 50px;"></div>
+    <div class=""
+        style="font-size: 35px; height:60px; padding:2px;border:2px solid rgb(128, 88, 3);border-radius: 10px;background-color: rgb(245, 235, 181);">
+        <div style="height: fit-content;white-space: nowrap;">
+            <div *ngIf="notStarted else started;" style="display: flex;height:52px;">
+                <input type="number" [contentEditable]="true" (keyup)="timeChanged($event)" [value]="value" min="3"
+                    max="45" style="width: 43px;height:fit-content;outline:none;border:0px; background: none;" />
+                <p style="height: fit-content;">&nbsp;:&nbsp;</p>
+                <p>00</p>
+            </div>
+            <ng-template #started>
+                <countdown #b_timer [config]="{leftTime: time, demand:'true',format: 'mm : ss' }"
+                    (event)="handleEvent($event)">
+                </countdown>
+            </ng-template>
+        </div>
+    </div>
+    <div style="height:360px;"></div>
+    <div class=""
+        style="font-size: 35px; height:60px; padding:2px;border:2px solid rgb(128, 88, 3);border-radius: 10px;background-color: rgb(245, 235, 181)">
+        <!-- <div style="height: fit-content;white-space: nowrap;">
+            <countdown #w_timer [config]="{leftTime: time, demand:'true',format: 'mm : ss'}"
+                (event)="handleEvent($event)">
+            </countdown>
+        </div> -->
+        <div style="height: fit-content;white-space: nowrap;">
+            <div *ngIf="notStarted else started;" style="display: flex;height:52px;">
+                <input type="number" [contentEditable]="true" (keyup)="timeChanged($event)" [value]="value" min="3"
+                    max="45" style="width: 43px;height:fit-content;outline:none;border:0px; background: none;" />
+                <p style="height: fit-content;">&nbsp;:&nbsp;</p>
+                <p>00</p>
+            </div>
+            <ng-template #started>
+                <countdown #w_timer [config]="{leftTime: time, demand:'true',format: 'mm : ss' }"
+                    (event)="handleEvent($event)">
+                </countdown>
+            </ng-template>
+        </div>
+    </div>
+    <div style="height: 50px;"></div>
+</div>
+<div id='timer' class="mobile-view">
+    <div style="display: flex;justify-content: space-between;">
+        <div style="border: 1px solid black; margin: 10px;">
+            <countdown #b_timer [config]="{leftTime: time, demand:'true',format: 'mm : ss' }"
+                (event)="handleEvent($event)">
+            </countdown>
+        </div>
+        <div style="border: 1px solid black; margin: 10px;">
+            <countdown #w_timer [config]="{leftTime: time, demand:'true',format: 'mm : ss'}"
+                (event)="handleEvent($event)">
+            </countdown>
+        </div>
+    </div>
+</div>

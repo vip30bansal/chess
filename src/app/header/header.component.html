@@ -1,0 +1,21 @@
+<mat-toolbar class="" style="width: 100%; background-color: rgb(100, 100, 100);">
+    <mat-toolbar-row style="display: flex;justify-content: space-between;">
+        <div style="margin-left: 2%;font-size:30px;cursor: pointer;">
+            <b>Chess</b>
+        </div>
+        <div style="display: flex;margin-right: 2%;">
+            <div style="font-size: 30px; margin: 10px;cursor: pointer;">
+                <i class="far fa-bell"></i>
+            </div>
+            <div style="font-size: 30px;margin: 10px;cursor: pointer;">
+                <i class="far fa-user-circle"></i>
+            </div>
+            <div style="font-size: 20px; margin: 10px;cursor: pointer;">
+                Sign in
+            </div>
+            <div style="font-size: 20px; margin: 10px;cursor: pointer;">
+                <a [routerLink]="['/msgs']">Read Messages</a>
+            </div>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

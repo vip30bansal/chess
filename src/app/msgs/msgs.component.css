@@ -1,0 +1,84 @@
+.sentmsg{
+    height: fit-content;
+    float: right;
+    margin-top: 2px;
+    width:100%;
+}
+.receivedmsg {
+    height: fit-content;
+    /* width: fit-content; */
+    float:left;
+    margin-top: 2px;
+    width:100%;
+    /* max-width: 500px; */
+}
+.sentmsg > div{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.receivedmsg >div{
+    display: flex;
+}
+
+.sentmsg > div > .msg{
+    border: 1px solid rgb(29, 134, 175);
+    background-color: rgb(164, 222, 245);
+    color: rgb(29, 134, 175);
+    border-radius: 15px 15px 0 15px;
+    word-wrap: break-word;
+    width: fit-content;
+    font-size: 18px;
+    float: right;
+    padding: 2px 5px;
+    max-width: 500px;
+}
+.receivedmsg > div > .msg{
+    border: 1px solid rgb(17, 165, 62);
+    background-color: rgb(185, 243, 203);
+    color: rgb(17, 165, 62);
+    border-radius: 15px 15px 15px 0;
+    word-wrap: break-word;
+    width: fit-content;
+    font-size: 18px;
+    float: left;
+    padding: 2px 5px;
+    max-width: 500px;
+}
+.sentmsg > div > span{
+    cursor: pointer;
+    float: right;
+    width: 30px;
+    height: 30px;
+    padding:5px;
+    border-radius: 50%;
+    border: 1px solid rgb(46, 46, 46);
+    margin: auto 5px;
+}
+.receivedmsg > div > span{
+    cursor: pointer;
+    float: left;
+    width: 30px;
+    height: 30px;
+    padding:5px;
+    border-radius: 50%;
+    border: 1px solid rgb(46, 46, 46);
+    margin: auto 5px;
+}
+.sent{
+    height: fit-content;
+    width: 100%;
+    margin-top: 1px;
+    font-size: 10px;
+}
+.received{
+    height: fit-content;
+    width: 100%;
+    margin-top: 1px;
+    font-size: 10px;
+}
+.sent > p{
+    float: right;
+}
+.received > p{
+    float: left;
+}

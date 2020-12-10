@@ -1,0 +1,30 @@
+.sentmsg{
+    height: fit-content;
+    width: fit-content;
+    border: 1px solid rgb(29, 134, 175);
+    background-color: rgb(164, 222, 245);
+    color: rgb(29, 134, 175);
+    border-radius: 15px 15px 0 15px;
+    font-size: 18px;
+    float: right;
+    padding: 2px 5px;
+    margin-top: 1px;
+    max-width: 220px;
+}
+.receivedmsg{
+    height: fit-content;
+    width: fit-content;
+    border: 1px solid rgb(17, 165, 62);
+    background-color: rgb(185, 243, 203);
+    color: rgb(17, 165, 62);
+    border-radius: 15px 15px 15px 0;
+    float:left;
+    font-size: 18px;
+    padding: 2px 5px;
+    margin-top: 1px;
+    max-width: 220px;
+}
+.desktop-only{
+    background-image: radial-gradient(rgb(240, 196, 66),rgb(253, 248, 231));
+    /* background-image: radial-gradient(rgba(236, 182, 19,0.2),rgba(236, 182, 19,0.7)); */
+}

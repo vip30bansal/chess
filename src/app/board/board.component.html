@@ -1,0 +1,630 @@
+<div class="board desktop-only" style="display: flex;margin-top: 10px;;">
+  <app-timer></app-timer>
+  <div style="width: 580px;">
+    <div
+      style="align-self:center;height:580px;width:580px;padding:10px;align-content:center;background-color:rgb(128, 88, 3);">
+      <div
+        style="height: 560px; width: 560px; background-color: rgb(238, 221, 167); padding: 0 0 35px 0px; display: flex;">
+        <div class="text-center"
+          style="height: 560px; width: 35px; padding:40px 5px; display: flex; flex-direction:column;">
+          <div *ngFor="let i of numbers" style="height: 60px; font-size: 21px; margin-top:17px;">
+            <strong>{{i}}</strong>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction: column;">
+          <div class="text-center"
+            style="height: 35px; width: 490px; padding: 3px 5px 7px 5px; display: flex; flex-direction:row;">
+            <div *ngFor="let i of letters" style="width:60px;font-size: 20px;">
+              <strong>{{i}}</strong>
+            </div>
+          </div>
+          <div style="height: 490px; width: 490px; background-color: burlywood; padding: 5px;">
+            <div *ngIf="user == 'white'; else black" style="height: 480px;width: 480px;">
+              <div class="ui-md-12">
+                <!--<div class="ui-g-2"></div>-->
+                <div #A8 id='A8' class="ui-g-1" (click)="click('A8')">
+                  <img *ngIf="position.A8!=''" draggable=false src="../../assets/pieces/{{position.A8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B8 id='B8' class="ui-g-1 black" (click)="click('B8')">
+                  <img *ngIf="position.B8!=''" draggable=false src="../../assets/pieces/{{position.B8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C8 id='C8' class="ui-g-1" (click)="click('C8')">
+                  <img *ngIf="position.C8!=''" draggable=false src="../../assets/pieces/{{position.C8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D8 id='D8' class="ui-g-1 black" (click)="click('D8')">
+                  <img *ngIf="position.D8!=''" draggable=false src="../../assets/pieces/{{position.D8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E8 id='E8' class="ui-g-1" (click)="click('E8')">
+                  <img *ngIf="position.E8!=''" draggable=false src="../../assets/pieces/{{position.E8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F8 id='F8' class="ui-g-1 black" (click)="click('F8')">
+                  <img *ngIf="position.F8!=''" draggable=false src="../../assets/pieces/{{position.F8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G8 id='G8' class="ui-g-1" (click)="click('G8')">
+                  <img *ngIf="position.G8!=''" draggable=false src="../../assets/pieces/{{position.G8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #H8 id='H8' class="ui-g-1 black" (click)="click('H8')">
+                  <img *ngIf="position.H8!=''" draggable=false src="../../assets/pieces/{{position.H8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <!--<div class="ui-g-2"></div>-->
+              </div>
+              <!-- <i *ngIf="true" class="fas fa-chess-pawn"
+              style="color: black; font-size: 50px;"></i> -->
+              <div class="ui-md-12">
+                <div #A7 id='A7' class="ui-g-1 black" (click)="click('A7')">
+                  <img *ngIf="position.A7!=''" draggable=false src="../../assets/pieces/{{position.A7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B7 id='B7' class="ui-g-1" (click)="click('B7')">
+                  <img *ngIf="position.B7!=''" draggable=false src="../../assets/pieces/{{position.B7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C7 id='C7' class="ui-g-1 black" (click)="click('C7')">
+                  <img *ngIf="position.C7!=''" draggable=false src="../../assets/pieces/{{position.C7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D7 id='D7' class="ui-g-1" (click)="click('D7')">
+                  <img *ngIf="position.D7!=''" draggable=false src="../../assets/pieces/{{position.D7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E7 id='E7' class="ui-g-1 black" (click)="click('E7')">
+                  <img *ngIf="position.E7!=''" draggable=false src="../../assets/pieces/{{position.E7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F7 id='F7' class="ui-g-1" (click)="click('F7')">
+                  <img *ngIf="position.F7!=''" draggable=false src="../../assets/pieces/{{position.F7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G7 id='G7' class="ui-g-1 black" (click)="click('G7')">
+                  <img *ngIf="position.G7!=''" draggable=false src="../../assets/pieces/{{position.G7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #H7 id='H7' class="ui-g-1" (click)="click('H7')">
+                  <img *ngIf="position.H7!=''" draggable=false src="../../assets/pieces/{{position.H7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+              <div class="ui-md-12">
+                <div #A6 id='A6' class="ui-g-1" (click)="click('A6')">
+                  <img *ngIf="position.A6!=''" draggable=false src="../../assets/pieces/{{position.A6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B6 id='B6' class="ui-g-1 black" (click)="click('B6')">
+                  <img *ngIf="position.B6!=''" draggable=false src="../../assets/pieces/{{position.B6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C6 id='C6' class="ui-g-1" (click)="click('C6')">
+                  <img *ngIf="position.C6!=''" draggable=false src="../../assets/pieces/{{position.C6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D6 id='D6' class="ui-g-1 black" (click)="click('D6')">
+                  <img *ngIf="position.D6!=''" draggable=false src="../../assets/pieces/{{position.D6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E6 id='E6' class="ui-g-1" (click)="click('E6')">
+                  <img *ngIf="position.E6!=''" draggable=false src="../../assets/pieces/{{position.E6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F6 id='F6' class="ui-g-1 black" (click)="click('F6')">
+                  <img *ngIf="position.F6!=''" draggable=false src="../../assets/pieces/{{position.F6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G6 id='G6' class="ui-g-1" (click)="click('G6')">
+                  <img *ngIf="position.G6!=''" draggable=false src="../../assets/pieces/{{position.G6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #H6 id='H6' class="ui-g-1 black" (click)="click('H6')">
+                  <img *ngIf="position.H6!=''" draggable=false src="../../assets/pieces/{{position.H6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+              <div class="ui-md-12">
+                <div #A5 id='A5' class="ui-g-1 black" (click)="click('A5')">
+                  <img *ngIf="position.A5!=''" draggable=false src="../../assets/pieces/{{position.A5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B5 id='B5' class="ui-g-1" (click)="click('B5')">
+                  <img *ngIf="position.B5!=''" draggable=false src="../../assets/pieces/{{position.B5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C5 id='C5' class="ui-g-1 black" (click)="click('C5')">
+                  <img *ngIf="position.C5!=''" draggable=false src="../../assets/pieces/{{position.C5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D5 id='D5' class="ui-g-1" (click)="click('D5')">
+                  <img *ngIf="position.D5!=''" draggable=false src="../../assets/pieces/{{position.D5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E5 id='E5' class="ui-g-1 black" (click)="click('E5')">
+                  <img *ngIf="position.E5!=''" draggable=false src="../../assets/pieces/{{position.E5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F5 id='F5' class="ui-g-1" (click)="click('F5')">
+                  <img *ngIf="position.F5!=''" draggable=false src="../../assets/pieces/{{position.F5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G5 id='G5' class="ui-g-1 black" (click)="click('G5')">
+                  <img *ngIf="position.G5!=''" draggable=false src="../../assets/pieces/{{position.G5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #H5 id='H5' class="ui-g-1" (click)="click('H5')">
+                  <img *ngIf="position.H5!=''" draggable=false src="../../assets/pieces/{{position.H5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+              <div class="ui-md-12">
+                <div #A4 id='A4' class="ui-g-1" (click)="click('A4')">
+                  <img *ngIf="position.A4!=''" src="../../assets/pieces/{{position.A4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B4 id='B4' class="ui-g-1 black" (click)="click('B4')">
+                  <img *ngIf="position.B4!=''" src="../../assets/pieces/{{position.B4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C4 id='C4' class="ui-g-1" (click)="click('C4')">
+                  <img *ngIf="position.C4!=''" src="../../assets/pieces/{{position.C4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D4 id='D4' class="ui-g-1 black" (click)="click('D4')">
+                  <img *ngIf="position.D4!=''" src="../../assets/pieces/{{position.D4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E4 id='E4' class="ui-g-1" (click)="click('E4')">
+                  <img *ngIf="position.E4!=''" src="../../assets/pieces/{{position.E4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F4 id='F4' class="ui-g-1 black" (click)="click('F4')">
+                  <img *ngIf="position.F4!=''" src="../../assets/pieces/{{position.F4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G4 id='G4' class="ui-g-1" (click)="click('G4')">
+                  <img *ngIf="position.G4!=''" src="../../assets/pieces/{{position.G4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #H4 id='H4' class="ui-g-1 black" (click)="click('H4')">
+                  <img *ngIf="position.H4!=''" src="../../assets/pieces/{{position.H4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+              <div class="ui-md-12">
+                <div #A3 id='A3' class="ui-g-1 black" (click)="click('A3')">
+                  <img *ngIf="position.A3!=''" src="../../assets/pieces/{{position.A3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B3 id='B3' class="ui-g-1" (click)="click('B3')">
+                  <img *ngIf="position.B3!=''" src="../../assets/pieces/{{position.B3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C3 id='C3' class="ui-g-1 black" (click)="click('C3')">
+                  <img *ngIf="position.C3!=''" src="../../assets/pieces/{{position.C3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D3 id='D3' class="ui-g-1" (click)="click('D3')">
+                  <img *ngIf="position.D3!=''" src="../../assets/pieces/{{position.D3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E3 id='E3' class="ui-g-1 black" (click)="click('E3')">
+                  <img *ngIf="position.E3!=''" src="../../assets/pieces/{{position.E3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F3 id='F3' class="ui-g-1" (click)="click('F3')">
+                  <img *ngIf="position.F3!=''" src="../../assets/pieces/{{position.F3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G3 id='G3' class="ui-g-1 black" (click)="click('G3')">
+                  <img *ngIf="position.G3!=''" src="../../assets/pieces/{{position.G3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #H3 id='H3' class="ui-g-1" (click)="click('H3')">
+                  <img *ngIf="position.H3!=''" src="../../assets/pieces/{{position.H3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+              <div class="ui-md-12">
+                <div #A2 id='A2' class="ui-g-1" (click)="click('A2')">
+                  <img *ngIf="position.A2!=''" src="../../assets/pieces/{{position.A2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B2 id='B2' class="ui-g-1 black" (click)="click('B2')">
+                  <img *ngIf="position.B2!=''" src="../../assets/pieces/{{position.B2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C2 id='C2' class="ui-g-1" (click)="click('C2')">
+                  <img *ngIf="position.C2!=''" src="../../assets/pieces/{{position.C2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D2 id='D2' class="ui-g-1 black" (click)="click('D2')">
+                  <img *ngIf="position.D2!=''" src="../../assets/pieces/{{position.D2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E2 id='E2' class="ui-g-1" (click)="click('E2')">
+                  <img *ngIf="position.E2!=''" src="../../assets/pieces/{{position.E2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F2 id='F2' class="ui-g-1 black" (click)="click('F2')">
+                  <img *ngIf="position.F2!=''" src="../../assets/pieces/{{position.F2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G2 id='G2' class="ui-g-1" (click)="click('G2')">
+                  <img *ngIf="position.G2!=''" src="../../assets/pieces/{{position.G2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #H2 id='H2' class="ui-g-1 black" (click)="click('H2')">
+                  <img *ngIf="position.H2!=''" src="../../assets/pieces/{{position.H2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+              <div class="ui-md-12">
+                <div #A1 id='A1' class="ui-g-1 black" (click)="click('A1')">
+                  <img *ngIf="position.A1!=''" src="../../assets/pieces/{{position.A1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B1 id='B1' class="ui-g-1" (click)="click('B1')">
+                  <img *ngIf="position.B1!=''" src="../../assets/pieces/{{position.B1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C1 id='C1' class="ui-g-1 black" (click)="click('C1')">
+                  <img *ngIf="position.C1!=''" src="../../assets/pieces/{{position.C1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D1 id='D1' class="ui-g-1" (click)="click('D1')">
+                  <img *ngIf="position.D1!=''" src="../../assets/pieces/{{position.D1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E1 id='E1' class="ui-g-1 black" (click)="click('E1')">
+                  <img *ngIf="position.E1!=''" src="../../assets/pieces/{{position.E1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F1 id='F1' class="ui-g-1" (click)="click('F1')">
+                  <img *ngIf="position.F1!=''" src="../../assets/pieces/{{position.F1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G1 id='G1' class="ui-g-1 black" (click)="click('G1')">
+                  <img *ngIf="position.G1!=''" src="../../assets/pieces/{{position.G1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #H1 id='H1' class="ui-g-1" (click)="click('H1')">
+                  <img *ngIf="position.H1!=''" src="../../assets/pieces/{{position.H1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+            </div>
+            <ng-template #black>
+              <div class="ui-md-12">
+                <!--<div class="ui-g-2"></div>-->
+                <div #H1 id='H1' class="ui-g-1" (click)="click('H1')">
+                  <img *ngIf="position.H1!=''" src="../../assets/pieces/{{position.H1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G1 id='G1' class="ui-g-1 black" (click)="click('G1')">
+                  <img *ngIf="position.G1!=''" src="../../assets/pieces/{{position.G1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F1 id='F1' class="ui-g-1" (click)="click('F1')">
+                  <img *ngIf="position.F1!=''" src="../../assets/pieces/{{position.F1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E1 id='E1' class="ui-g-1 black" (click)="click('E1')">
+                  <img *ngIf="position.E1!=''" src="../../assets/pieces/{{position.E1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D1 id='D1' class="ui-g-1" (click)="click('D1')">
+                  <img *ngIf="position.D1!=''" src="../../assets/pieces/{{position.D1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C1 id='C1' class="ui-g-1 black" (click)="click('C1')">
+                  <img *ngIf="position.C1!=''" src="../../assets/pieces/{{position.C1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B1 id='B1' class="ui-g-1" (click)="click('B1')">
+                  <img *ngIf="position.B1!=''" src="../../assets/pieces/{{position.B1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #A1 id='A1' class="ui-g-1 black" (click)="click('A1')">
+                  <img *ngIf="position.A1!=''" src="../../assets/pieces/{{position.A1}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <!--<div class="ui-g-2"></div>-->
+              </div>
+              <!-- <i *ngIf="true" class="fas fa-chess-pawn"
+              style="color: black; font-size: 50px;"></i> -->
+              <div class="ui-md-12">
+                <div #H2 id='H2' class="ui-g-1 black" (click)="click('H2')">
+                  <img *ngIf="position.H2!=''" src="../../assets/pieces/{{position.H2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G2 id='G2' class="ui-g-1" (click)="click('G2')">
+                  <img *ngIf="position.G2!=''" src="../../assets/pieces/{{position.G2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F2 id='F2' class="ui-g-1 black" (click)="click('F2')">
+                  <img *ngIf="position.F2!=''" src="../../assets/pieces/{{position.F2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E2 id='E2' class="ui-g-1" (click)="click('E2')">
+                  <img *ngIf="position.E2!=''" src="../../assets/pieces/{{position.E2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D2 id='D2' class="ui-g-1 black" (click)="click('D2')">
+                  <img *ngIf="position.D2!=''" src="../../assets/pieces/{{position.D2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C2 id='C2' class="ui-g-1" (click)="click('C2')">
+                  <img *ngIf="position.C2!=''" src="../../assets/pieces/{{position.C2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B2 id='B2' class="ui-g-1 black" (click)="click('B2')">
+                  <img *ngIf="position.B2!=''" src="../../assets/pieces/{{position.B2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #A2 id='A2' class="ui-g-1" (click)="click('A2')">
+                  <img *ngIf="position.A2!=''" src="../../assets/pieces/{{position.A2}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+              <div class="ui-md-12">
+                <div #H3 id='H3' class="ui-g-1" (click)="click('H3')">
+                  <img *ngIf="position.H3!=''" src="../../assets/pieces/{{position.H3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G3 id='G3' class="ui-g-1 black" (click)="click('G3')">
+                  <img *ngIf="position.G3!=''" src="../../assets/pieces/{{position.G3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F3 id='F3' class="ui-g-1" (click)="click('F3')">
+                  <img *ngIf="position.F3!=''" src="../../assets/pieces/{{position.F3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E3 id='E3' class="ui-g-1 black" (click)="click('E3')">
+                  <img *ngIf="position.E3!=''" src="../../assets/pieces/{{position.E3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D3 id='D3' class="ui-g-1" (click)="click('D3')">
+                  <img *ngIf="position.D3!=''" src="../../assets/pieces/{{position.D3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C3 id='C3' class="ui-g-1 black" (click)="click('C3')">
+                  <img *ngIf="position.C3!=''" src="../../assets/pieces/{{position.C3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B3 id='B3' class="ui-g-1" (click)="click('B3')">
+                  <img *ngIf="position.B3!=''" src="../../assets/pieces/{{position.B3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #A3 id='A3' class="ui-g-1 black" (click)="click('A3')">
+                  <img *ngIf="position.A3!=''" src="../../assets/pieces/{{position.A3}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+              <div class="ui-md-12">
+                <div #H4 id='H4' class="ui-g-1 black" (click)="click('H4')">
+                  <img *ngIf="position.H4!=''" src="../../assets/pieces/{{position.H4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G4 id='G4' class="ui-g-1" (click)="click('G4')">
+                  <img *ngIf="position.G4!=''" src="../../assets/pieces/{{position.G4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F4 id='F4' class="ui-g-1 black" (click)="click('F4')">
+                  <img *ngIf="position.F4!=''" src="../../assets/pieces/{{position.F4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E4 id='E4' class="ui-g-1" (click)="click('E4')">
+                  <img *ngIf="position.E4!=''" src="../../assets/pieces/{{position.E4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D4 id='D4' class="ui-g-1 black" (click)="click('D4')">
+                  <img *ngIf="position.D4!=''" src="../../assets/pieces/{{position.D4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C4 id='C4' class="ui-g-1" (click)="click('C4')">
+                  <img *ngIf="position.C4!=''" src="../../assets/pieces/{{position.C4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B4 id='B4' class="ui-g-1 black" (click)="click('B4')">
+                  <img *ngIf="position.B4!=''" src="../../assets/pieces/{{position.B4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #A4 id='A4' class="ui-g-1" (click)="click('A4')">
+                  <img *ngIf="position.A4!=''" src="../../assets/pieces/{{position.A4}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+              <div class="ui-md-12">
+                <div #H5 id='H5' class="ui-g-1" (click)="click('H5')">
+                  <img *ngIf="position.H5!=''" src="../../assets/pieces/{{position.H5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G5 id='G5' class="ui-g-1 black" (click)="click('G5')">
+                  <img *ngIf="position.G5!=''" src="../../assets/pieces/{{position.G5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F5 id='F5' class="ui-g-1" (click)="click('F5')">
+                  <img *ngIf="position.F5!=''" src="../../assets/pieces/{{position.F5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E5 id='E5' class="ui-g-1 black" (click)="click('E5')">
+                  <img *ngIf="position.E5!=''" src="../../assets/pieces/{{position.E5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D5 id='D5' class="ui-g-1" (click)="click('D5')">
+                  <img *ngIf="position.D5!=''" src="../../assets/pieces/{{position.D5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C5 id='C5' class="ui-g-1 black" (click)="click('C5')">
+                  <img *ngIf="position.C5!=''" src="../../assets/pieces/{{position.C5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B5 id='B5' class="ui-g-1" (click)="click('B5')">
+                  <img *ngIf="position.B5!=''" src="../../assets/pieces/{{position.B5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #A5 id='A5' class="ui-g-1 black" (click)="click('A5')">
+                  <img *ngIf="position.A5!=''" src="../../assets/pieces/{{position.A5}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+              <div class="ui-md-12">
+                <div #H6 id='H6' class="ui-g-1 black" (click)="click('H6')">
+                  <img *ngIf="position.H6!=''" src="../../assets/pieces/{{position.H6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G6 id='G6' class="ui-g-1" (click)="click('G6')">
+                  <img *ngIf="position.G6!=''" src="../../assets/pieces/{{position.G6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F6 id='F6' class="ui-g-1 black" (click)="click('F6')">
+                  <img *ngIf="position.F6!=''" src="../../assets/pieces/{{position.F6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E6 id='E6' class="ui-g-1" (click)="click('E6')">
+                  <img *ngIf="position.E6!=''" src="../../assets/pieces/{{position.E6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D6 id='D6' class="ui-g-1 black" (click)="click('D6')">
+                  <img *ngIf="position.D6!=''" src="../../assets/pieces/{{position.D6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C6 id='C6' class="ui-g-1" (click)="click('C6')">
+                  <img *ngIf="position.C6!=''" src="../../assets/pieces/{{position.C6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B6 id='B6' class="ui-g-1 black" (click)="click('B6')">
+                  <img *ngIf="position.B6!=''" src="../../assets/pieces/{{position.B6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #A6 id='A6' class="ui-g-1" (click)="click('A6')">
+                  <img *ngIf="position.A6!=''" src="../../assets/pieces/{{position.A6}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+              <div class="ui-md-12">
+                <div #H7 id='H7' class="ui-g-1" (click)="click('H7')">
+                  <img *ngIf="position.H7!=''" src="../../assets/pieces/{{position.H7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G7 id='G7' class="ui-g-1 black" (click)="click('G7')">
+                  <img *ngIf="position.G7!=''" src="../../assets/pieces/{{position.G7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F7 id='F7' class="ui-g-1" (click)="click('F7')">
+                  <img *ngIf="position.F7!=''" src="../../assets/pieces/{{position.F7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E7 id='E7' class="ui-g-1 black" (click)="click('E7')">
+                  <img *ngIf="position.E7!=''" src="../../assets/pieces/{{position.E7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D7 id='D7' class="ui-g-1" (click)="click('D7')">
+                  <img *ngIf="position.D7!=''" src="../../assets/pieces/{{position.D7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C7 id='C7' class="ui-g-1 black" (click)="click('C7')">
+                  <img *ngIf="position.C7!=''" src="../../assets/pieces/{{position.C7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B7 id='B7' class="ui-g-1" (click)="click('B7')">
+                  <img *ngIf="position.B7!=''" src="../../assets/pieces/{{position.B7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #A7 id='A7' class="ui-g-1 black" (click)="click('A7')">
+                  <img *ngIf="position.A7!=''" src="../../assets/pieces/{{position.A7}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+              <div class="ui-md-12">
+                <div #H8 id='H8' class="ui-g-1 black" (click)="click('H8')">
+                  <img *ngIf="position.H8!=''" src="../../assets/pieces/{{position.H8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #G8 id='G8' class="ui-g-1" (click)="click('G8')">
+                  <img *ngIf="position.G8!=''" src="../../assets/pieces/{{position.G8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #F8 id='F8' class="ui-g-1 black" (click)="click('F8')">
+                  <img *ngIf="position.F8!=''" src="../../assets/pieces/{{position.F8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #E8 id='E8' class="ui-g-1" (click)="click('E8')">
+                  <img *ngIf="position.E8!=''" src="../../assets/pieces/{{position.E8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #D8 id='D8' class="ui-g-1 black" (click)="click('D8')">
+                  <img *ngIf="position.D8!=''" src="../../assets/pieces/{{position.D8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #C8 id='C8' class="ui-g-1" (click)="click('C8')">
+                  <img *ngIf="position.C8!=''" src="../../assets/pieces/{{position.C8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #B8 id='B8' class="ui-g-1 black" (click)="click('B8')">
+                  <img *ngIf="position.B8!=''" src="../../assets/pieces/{{position.B8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+                <div #A8 id='A8' class="ui-g-1" (click)="click('A8')">
+                  <img *ngIf="position.A8!=''" src="../../assets/pieces/{{position.A8}}.png"
+                    style="width: 60px; height: 60px;">
+                </div>
+              </div>
+            </ng-template>
+          </div>
+          <div class="text-center"
+            style="height: 35px; width: 490px; padding: 3px 5px 7px 5px; display: flex; flex-direction:row;">
+            <div *ngFor="let i of letters" style="width:60px;font-size: 20px;">
+              <strong>{{i}}</strong>
+            </div>
+          </div>
+        </div>
+        <div class="text-center"
+          style="height: 560px; width: 35px; padding:40px 5px; display: flex; flex-direction:column;">
+          <div *ngFor="let i of numbers" style="height: 60px; font-size: 21px; margin-top:17px;">
+            <strong>{{i}}</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="ui-g-4 text-center" style="margin:auto;">
+        <mat-radio-group [(value)]="user" [disabled]="false" (change)="changeUser($event)" style="height: 35px;"
+          color="primary">
+          <mat-radio-button value="white" style="margin-right: 5px;">White</mat-radio-button>
+          <mat-radio-button value="black" style="margin-left:5px;">Black</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="ui-g-4 text-center" style="margin:auto;">
+        <mat-slide-toggle color="primary" labelPosition="before" [checked]="true" (change)="show_suggestion($event)">
+          Suggestion</mat-slide-toggle>
+      </div>
+      <div class="ui-g-4 text-center">
+        <div [class.disabled]="!enableUndo" [class.enabled]="enableUndo"
+          style="height:40px;width:40px;border:1px solid black; border-radius: 20%;"
+          (click)="enableUndo ? undo_move():false" aria-disabled="!enableUndo">
+          <i class="fas fa-undo" title="Undo" style="margin:9px;font-size: 22px;"></i>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center" style="padding-left: 25px; padding-right: 25px;">
+      <div class="ui-g-12"
+        style="display:flex;flex-wrap:wrap;overflow-y:auto;border:2px solid rgb(90, 59, 3);border-radius:10px;width:560px;height: 100px; background-color: rgb(248, 247, 238); padding:10px;">
+        <div *ngFor="let move of moves;index as i" (click)="func(i-1)"
+          style="cursor:pointer;height:fit-content;padding:0 5px 0 5px;color:rgb(75, 75, 212); font-size: 15px;">
+          {{i+1}}.{{move}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-chatbox></app-chatbox>
+</div>
+
+<div class="mobile-view" style="display: flex;flex-direction: column;margin: 0; border:1px solid black;">
+  <app-timer></app-timer>
+  <div style="border: 1px solid black;width: 100%;padding-top: 100%;"> </div>
+</div>

@@ -1,0 +1,24 @@
+.black{
+    background-color: rgb(108, 109, 110);
+}
+.ui-g-1 {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 60px;   
+    width: 60px;
+    padding: 0%;
+    align-content: center;
+    background-color: rgb(245, 235, 181);
+}
+.ui-g-2{
+    width: 100px;
+    height: 50px;
+    border:1px solid steelblue;
+}
+.ui-md-12{
+    width:602px;
+    height: 60px;
+    position: relative;
+    padding: 0%;
+}
